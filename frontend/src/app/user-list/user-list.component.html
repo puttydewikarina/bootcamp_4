@@ -1,0 +1,42 @@
+<div class="col-md-8 col-md-offset-2">
+<br><br><br>
+  <div class="form-group">
+      <label for="name">Course Name</label>
+      <input type="text" class="form-control" [(ngModel)]="newName" id="name" placeholder="Enter Course Name">
+    </div>
+    <div class="form-group">
+      <label for="email">Course Units</label>
+      <input type="text" class="form-control" [(ngModel)]="newUnits" id="units" placeholder="Enter Course Units">
+    </div>
+    <div class="form-group">
+      <label for="address">Course Department</label>
+      <input type="text" class="form-control" [(ngModel)]="newDepartment" id="department" placeholder="Enter Course Department">
+    </div>
+    <div class="form-group">
+      <label for="address">Course Assignment</label>
+      <input type="text" class="form-control" [(ngModel)]="newAssignment" id="assignment" placeholder="Enter Course Assignment">
+    </div>
+
+    <button class="btn btn-primary" (click)="addCourse()">Add Course</button>
+
+    <hr><hr>
+
+    <table class="table table-bordered table-hover table-striped">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Units</th>
+        <th>Department</th>
+        <th>Assignment</th>
+      </tr>
+
+      <tr *ngFor="let courseInput of dataservice.courseList">
+        <td> {{ courseInput.ID }} </td>
+        <td> {{ courseInput.name }} </td>
+        <td> {{ courseInput.units }} </td>
+        <td> {{ courseInput.department }} </td>
+        <td> {{ courseInput.assignment }} </td>
+      </tr>
+    </table>
+
+</div>
